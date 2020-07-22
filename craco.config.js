@@ -6,8 +6,8 @@ module.exports = {
       webpackConfig.plugins.push(
         new RouteManifest({
           routes(str) {
-            let out = str.replace('./src/pages', '').toLowerCase()
-            if (out === '/home') return '/'
+            let out = str.replace('pages', '').toLowerCase()
+            if (out === '/home') out = '/'
             return out
           },
           filename: 'rmanifest.json',
